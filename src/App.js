@@ -9,7 +9,7 @@ function App() {
   const addItem = (item) => {
     setShoppingData((prev) => {
       return (
-        [...prev,...item]
+        [...prev,item]
       )
     });
   };
