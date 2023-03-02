@@ -1,15 +1,26 @@
-
-export default function Additem(){
+import React from "react";
+export default function Additem(props){
+    const [data ,setData] = React.useState({item: "", amount: ""})
 
     function handleSubmit(event){
         event.preventDefault();
-        console.log("handleSubmit")
+        props.addItem(data)
+        event.target.reset()
+    }
+    
+    const handelChange = (event)=>{
+        setData((prev)=>{
+            return{
+                ...prev,
+                [event.target.name]: event.target.value
+            }
+        })
     }
     return (
         <div className="add-item-container">
         <form onSubmit={handleSubmit}>
-            <input placeholder="name"/>
-            <input placeholder="amount"/>
+            <input placeholder="item" onChange={handelChange} name="item"/>
+            <input placeholder="amount" onChange={handelChange} name="amount"/>
             <button>Add</button>
         </form>
         </div>
