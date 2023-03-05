@@ -12,7 +12,8 @@
 .shopping-item{
     height: 70px;
     border: 1px solid green;
-    display: inline;
+    display: flex;
+    justify-content: space-between;
 }
 
 .shopping-item{

@@ -10,7 +10,11 @@ export default function Additem(props){
             console.log("handle submit");
             setErrorMessage("");
             props.addItem({...data,id: uuid()})
-            event.target.reset()
+            setData({
+                item: "",
+                amount: ""
+            })
+            // event.target.reset()
         }
     }
     
@@ -40,8 +44,8 @@ export default function Additem(props){
         <div className="add-item-container">
         {errorMessage && <h2>{errorMessage}</h2>}
         <form onSubmit={handleSubmit}>
-            <input placeholder="item" onChange={handelChange} name="item"/>
-            <input placeholder="amount" onChange={handelChange} name="amount"/>
+            <input placeholder="item" onChange={handelChange} name="item" value={data.item}/>
+            <input placeholder="amount" onChange={handelChange} name="amount" value={data.amount}/>
             <button>Add</button>
         </form>
         </div>
