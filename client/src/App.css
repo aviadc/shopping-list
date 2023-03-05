@@ -14,13 +14,16 @@
     border: 1px solid green;
     display: flex;
     justify-content: space-between;
-}
-
-.shopping-item{
     background-color: #edf7f6;
     width: 25rem;
     border-radius: 10px;
     margin: 0.5rem;
-    display: flex;
-    justify-content: space-around;
+}
+
+.del-button{
+    border-radius: 0 10px 10px 0;
+}
+
+.del-button:active{
+   background-color: black;
 }

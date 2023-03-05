@@ -6,7 +6,7 @@ export default function ShoppingList(props){
     // console.log(data);
     const shoppingList = props.shoppingData.map(({item,amount,id})=>{
         return(
-            <ShoppingItem item={item} amount={amount} key={id} />
+            <ShoppingItem item={item} amount={amount} key={id} id={id} delItem={props.delItem} />
         )
         
     })

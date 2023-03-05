@@ -14,11 +14,21 @@ function App() {
     });
   };
 
+  const delItem = (id)=>{
+    setShoppingData((prev)=>{
+      return (
+        prev.filter((item)=>{
+          return item.id !== id
+        })
+      )
+    })
+  }
+
   return (
     <div className="app-container">
       <h1>shopping list</h1>
       <Additem addItem={addItem} />
-      <ShoppingList shoppingData={shopppingData} />
+      <ShoppingList shoppingData={shopppingData} delItem={delItem} />
     </div>
   );
 }
