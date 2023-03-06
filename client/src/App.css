@@ -10,6 +10,7 @@
 }
 
 .shopping-item{
+    position: relative;
     height: 70px;
     border: 1px solid green;
     display: flex;
@@ -27,3 +28,24 @@
 .del-button:active{
    background-color: black;
 }
+
+.update-item{
+    position: absolute;
+    width: 100%;
+}
+
+.update-item button{
+    background-color: brown;
+}
+
+/* .update-item  input[type=text]{
+    font-style: none;
+    background-color: chartreuse;
+}
+
+input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  } */
