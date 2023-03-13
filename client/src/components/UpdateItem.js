@@ -5,7 +5,10 @@ export default function UpdateItem(props){
 
     const myStyle = {
         right: `${props.isUpdateMode ? '-100%' : 0}`,
-        transition: "right 2s ease-in-out",
+        transition: "right .5s ease-in-out",
+        width: '100%',
+        position: "absolute",
+        zIndex: '2',
     }
 
     return (

@@ -4,7 +4,7 @@ import ShoppingList from "./components/ShoppingList";
 import Additem from "./components/AddItem";
 
 function App() {
-  const [shopppingData, setShoppingData] = React.useState([]);
+  const [shopppingData, setShoppingData] = React.useState([{item: 'milk', amount: '3', id: 1}]);
 
   const addItem = (item) => {
     setShoppingData((prev) => {

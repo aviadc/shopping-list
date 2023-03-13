@@ -1,4 +1,6 @@
 .app-container{
+    position: relative;
+    /* z-index: -1; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,42 +12,38 @@
 }
 
 .shopping-item{
+    display: flex;
+    justify-content: space-between;
     position: relative;
     height: 70px;
     border: 1px solid green;
-    display: flex;
-    justify-content: space-between;
-    background-color: #edf7f6;
+    background-color: red;
+    /* background-color: #edf7f6; */
     width: 25rem;
     border-radius: 10px;
     margin: 0.5rem;
 }
-
-.del-button{
-    border-radius: 0 10px 10px 0;
+.shopping-item div,button{
+   width: 25%;
+   height: 100%;
+   z-index: 3;
 }
+
+.shopping-item div{
+    background-color: blue;
+}
+
+/* .del-button{
+    border-radius: 0 10px 10px 0;
+} */
 
 .del-button:active{
    background-color: black;
 }
 
-.update-item{
-    position: absolute;
-    width: 100%;
-}
 
 .update-item button{
     background-color: brown;
 }
 
-/* .update-item  input[type=text]{
-    font-style: none;
-    background-color: chartreuse;
-}
 
-input[type=text] {
-    width: 30%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-  } */
