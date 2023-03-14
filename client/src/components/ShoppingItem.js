@@ -9,8 +9,8 @@ export default function ShoppingItem(props) {
       <button className="del-button" onClick={()=>props.delItem(props.id)}>del</button>
       <div>{props.amount}</div>
       <div>{props.item}</div>
-      <button className="update-button" onClick={()=>setIsUpdateMode(prev=>!prev)}>Update</button>
-      <UpdateItem isUpdateMode={isUpdateMode}/>
+      <button className="update-button" onClick={()=>setIsUpdateMode(prev=>!prev)}>{isUpdateMode ? 'Cancel' : 'Update'}</button>
+      <UpdateItem isUpdateMode={isUpdateMode} setIsUpdateMode={setIsUpdateMode} UpdateItem={props.updateItem} id={props.id}/>
     </div>
   );
 }

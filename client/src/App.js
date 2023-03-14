@@ -24,11 +24,21 @@ function App() {
     })
   }
 
+  const updateItem = (id,newAmount)=>{
+    setShoppingData((prev)=>{
+      return (
+        prev.map(item=>{
+          return item.id !== id ? item : {...item, amount: newAmount}
+        })
+      )
+    })
+  }
+
   return (
     <div className="app-container">
       <h1>shopping list</h1>
       <Additem addItem={addItem} />
-      <ShoppingList shoppingData={shopppingData} delItem={delItem} />
+      <ShoppingList shoppingData={shopppingData} delItem={delItem} updateItem={updateItem}/>
     </div>
   );
 }
