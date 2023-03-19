@@ -1,4 +1,5 @@
 import React from "react"
+import api from "../api/data"
 
 
 export default function UpdateItem(props){
@@ -25,12 +26,17 @@ export default function UpdateItem(props){
         setAmount('');
     }
 
+    const handleApi = async ()=>{
+        const result = await api.get()
+        console.log('resultApi', result);
+    }
+
 
     return (
         <div className="update-item"  style={myStyle}>
                 <input placeholder="amount" onChange={handleChange} value={amount}/>
                 <button onClick={()=>handleClick(props.id,amount)}>update</button>
-                {/* <button>cancel</button> */}
+                <button onClick={handleApi}>cancel</button>
         </div>
     )
 }
