@@ -4,7 +4,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 
-const uri = "mongodb+srv://aviadc:omar2023@firstcluster.x6zcp.mongodb.net/?retryWrites=true&w=majority"
+const uri = "mongodb+srv://aviadc:omar2022@firstcluster.x6zcp.mongodb.net/shoppingList?retryWrites=true&w=majority"
 
 const connect = async ()=>{
     try{
@@ -14,6 +14,8 @@ const connect = async ()=>{
         console.log("error:",error)
     }
 }
+
+connect();
 
 app.get('/',(req,res)=>{
     console.log("hey mother fucker");
