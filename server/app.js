@@ -1,8 +1,19 @@
 // const green = require('./1-test');
 // console.log(green);
 const express = require('express')
-
+const mongoose = require('mongoose')
 const app = express()
+
+const uri = "mongodb+srv://aviadc:omar2023@firstcluster.x6zcp.mongodb.net/?retryWrites=true&w=majority"
+
+const connect = async ()=>{
+    try{
+        mongoose.connect(uri);
+        console.log("connect to mongoDB")
+    }catch(error){
+        console.log("error:",error)
+    }
+}
 
 app.get('/',(req,res)=>{
     console.log("hey mother fucker");
