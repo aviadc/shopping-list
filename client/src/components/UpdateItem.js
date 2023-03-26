@@ -4,8 +4,10 @@ import React from "react"
 export default function UpdateItem(props){
 
     const myStyle = {
-        right: `${props.isUpdateMode ? '-100%' : 0}`,
-        transition: "right 2s ease-in-out",
+        position: 'absolute',
+        // zIndex: '-1',
+        right: `${props.isUpdateMode ? '-100%' : '-20%'}`,
+        transition: "right .5s ease-in-out",
     }
 
     return (

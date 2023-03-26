@@ -11,6 +11,7 @@
 
 .shopping-item{
     position: relative;
+    z-index: 3;
     height: 70px;
     border: 1px solid green;
     display: flex;
@@ -32,18 +33,20 @@
 .update-item{
     position: absolute;
     width: 100%;
+    display:flex
+    
 }
 
 .update-item button{
     background-color: brown;
 }
 
-/* .update-item  input[type=text]{
+.update-item  input[type=text]{
     font-style: none;
     background-color: chartreuse;
 }
 
-input[type=text] {
+/* input[type=text] {
     width: 30%;
     padding: 12px 20px;
     margin: 8px 0;
