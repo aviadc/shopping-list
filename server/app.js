@@ -1,11 +1,13 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 const ShoppingItem = require('./ShoppingItem')
 
 // console.log("shopping model:",ShoppingItem);
 
 const app = express()
-
+app.use(cors())
+app.use(express.json())
 const uri = "mongodb+srv://aviadc:omar2022@firstcluster.x6zcp.mongodb.net/shoppingList?retryWrites=true&w=majority"
 
 const connect = async ()=>{
@@ -19,15 +21,23 @@ const connect = async ()=>{
 
 connect();
 
-const addItem = async ()=>{
-    const item = await ShoppingItem.create({item: "milk", amount: 3});
-    console.log(item);
-}
 
-addItem();
+app.get('/',async (req,res)=>{
+    try{
+        const items = await ShoppingItem.find();
+        res.status(200).send(items)
+    }catch(err){
+        res.status(400).send(err)
+    }
+})
 
-app.get('/',(req,res)=>{
-    console.log("hey mother fucker");
+app.post('/', async (req,res)=>{
+    try{
+        const item = await ShoppingItem.create(req.body);
+        res.status(500).send(item)
+    }catch(err){
+        console.log(err)
+    }
 })
 
 app.listen(5000,()=>{

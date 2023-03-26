@@ -1,5 +1,5 @@
 import React from "react";
-import uuid from "react-uuid";
+// import uuid from "react-uuid";
 export default function Additem(props){
     const [data ,setData] = React.useState({item: "", amount: ""});
     const [errorMessage,setErrorMessage] = React.useState(""); 
@@ -9,7 +9,7 @@ export default function Additem(props){
         if(!isFiledsErrors()){     
             console.log("handle submit");
             setErrorMessage("");
-            props.addItem({...data,id: uuid()})
+            props.addItem(data)
             setData({
                 item: "",
                 amount: ""

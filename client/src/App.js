@@ -2,24 +2,43 @@ import "./App.css";
 import React from "react";
 import ShoppingList from "./components/ShoppingList";
 import Additem from "./components/AddItem";
+import api from "./api/data"
 
 
 function App() {
-  const [shopppingData, setShoppingData] = React.useState([{item: 'milk', amount: '3', id: 1}]);
+  const [shopppingData, setShoppingData] = React.useState([]);
 
-  const addItem = (item) => {
-    setShoppingData((prev) => {
-      return (
-        [...prev,item]
-      )
-    });
+  React.useEffect(()=>{
+    const getSoppongList=async ()=>{
+      try{
+        const {data} = await api.get('/');
+        setShoppingData(data);
+      }catch(err){
+        console.log(err);
+      }
+    }
+    getSoppongList();
+  },[])
+
+  const addItem = async (item) => {
+    try{
+      const newItem = await api.post('/',item);
+      console.log(newItem)
+    }catch(err){
+      console.log(err)
+    }
+    // setShoppingData((prev) => {
+    //   return (
+    //     [...prev,item]
+    //   )
+    // });
   };
 
   const delItem = (id)=>{
     setShoppingData((prev)=>{
       return (
         prev.filter((item)=>{
-          return item.id !== id
+          return item._id !== id
         })
       )
     })

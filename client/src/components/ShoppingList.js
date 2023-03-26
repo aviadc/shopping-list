@@ -4,9 +4,9 @@ import ShoppingItem from "./ShoppingItem";
 export default function ShoppingList(props){
     // const [data,setData] = React.useState(shoppingData.data);
     // console.log(data);
-    const shoppingList = props.shoppingData.map(({item,amount,id})=>{
+    const shoppingList = props.shoppingData.map(({item,amount,_id})=>{
         return(
-            <ShoppingItem item={item} amount={amount} key={id} id={id} delItem={props.delItem} updateItem={props.updateItem}/>
+            <ShoppingItem item={item} amount={amount} key={_id} id={_id} delItem={props.delItem} updateItem={props.updateItem}/>
         )
         
     })
