@@ -25,7 +25,7 @@ function App() {
       const newItem = await api.post('/',item);
       console.log(newItem)
     }catch(err){
-      console.log(err)
+      console.log("error:ad item:",err)
     }
     // setShoppingData((prev) => {
     //   return (
@@ -34,14 +34,19 @@ function App() {
     // });
   };
 
-  const delItem = (id)=>{
-    setShoppingData((prev)=>{
-      return (
-        prev.filter((item)=>{
-          return item._id !== id
-        })
-      )
-    })
+  const delItem = async (id)=>{
+    try{
+      await api.delete(`/${id}`);
+    }catch(err){
+      console.log(err)
+    }
+    // setShoppingData((prev)=>{
+    //   return (
+    //     prev.filter((item)=>{
+    //       return item._id !== id
+    //     })
+    //   )
+    // })
   }
 
   const updateItem = (id,newAmount)=>{

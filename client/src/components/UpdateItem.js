@@ -14,7 +14,6 @@ export default function UpdateItem(props){
                 <input placeholder="item" />
                 <input placeholder="amount"/>
                 <button>update</button>
-                <button>cancel</button>
             </form>
         </div>
     )
