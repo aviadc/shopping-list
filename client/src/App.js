@@ -19,7 +19,6 @@ function App() {
       }
     };
     getShoppongList();
-    // console.log("shoppingData", shopppingData);
   }, []);
 
   const addItem = async (item) => {
@@ -48,12 +47,17 @@ function App() {
     }
   };
 
-  const updateItem = (id, newAmount) => {
-    setShoppingData((prev) => {
-      return prev.map((item) => {
-        return item.id !== id ? item : { ...item, amount: newAmount };
+  const updateItem = async (id, newAmount) => {
+    try{
+      await api.put('/',{id,newAmount})
+      setShoppingData((prev) => {
+        return prev.map((item) => {
+          return item._id !== id ? item : { ...item, amount: newAmount };
+        });
       });
-    });
+    }catch(err){
+      console.log(err);
+    }
   };
 
   return (

@@ -51,6 +51,19 @@ app.delete("/:id", async (req, res) => {
   }
 });
 
+app.put('/', async (req,res)=>{
+  console.log(req.body);
+  try{
+    const item = await ShoppingItem.findById(req.body.id);
+    item.amount = req.body.newAmount;
+    item.save();
+    res.status(200).send(item);
+  }catch(err){
+    res.status(400).send(err)
+  }
+
+})
+
 app.listen(5000, () => {
   console.log("we are connected on port 5000");
   // console.log("app expresss", app);

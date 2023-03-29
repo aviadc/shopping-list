@@ -10,7 +10,7 @@ export default function ShoppingItem(props) {
       <div>{props.amount}</div>
       <div>{props.item}</div>
       <button className="update-button" onClick={()=>setIsUpdateMode(prev=>!prev)}>{isUpdateMode ? 'Cancel' : 'Update'}</button>
-      <UpdateItem isUpdateMode={isUpdateMode} setIsUpdateMode={setIsUpdateMode} UpdateItem={props.updateItem} id={props.id}/>
+      <UpdateItem isUpdateMode={isUpdateMode} setIsUpdateMode={setIsUpdateMode} updateItem={props.updateItem} id={props.id}/>
     </div>
   );
 }
