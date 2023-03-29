@@ -41,12 +41,13 @@ app.post("/", async (req, res) => {
 });
 
 app.delete("/:id", async (req, res) => {
+  console.log(req.params)
   try {
     const item = await ShoppingItem.findByIdAndDelete(req.params.id);
-    ShoppingItem.save();
+    console.log(item);
     res.status(200).send(item);
   } catch (err) {
-    res.status(400).send(err);
+    res.status(400).send(err.message);
   }
 });
 

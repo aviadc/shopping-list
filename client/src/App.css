@@ -21,6 +21,16 @@
     margin: 0.5rem;
 }
 
+.shopping-item div,button{
+    z-index: 2;
+}
+
+.shopping-item div{
+    background-color: cadetblue;
+    width: 100%;
+    text-align: center;
+}
+
 .del-button{
     border-radius: 0 10px 10px 0;
 }
@@ -29,10 +39,6 @@
    background-color: black;
 }
 
-.update-item{
-    position: absolute;
-    width: 100%;
-}
 
 .update-item button{
     background-color: brown;
